@@ -97,7 +97,7 @@ const CreatePoint = () => {
     });
   }, []);
 
-  // ChangeEvent<HTMLSelectElement> to select the 'targe.value'
+  // ChangeEvent<HTMLSelectElement> to select the 'value'.
   function handleSelectedUf(event: ChangeEvent<HTMLSelectElement>) {
     const uf = event.target.value;
 
@@ -127,10 +127,12 @@ const CreatePoint = () => {
     const alreadySelected = selectedItems.findIndex((item) => item === id);
 
     if (alreadySelected >= 0) {
+      // Remove from the array.
       const filteredItems = selectedItems.filter((item) => item !== id);
 
       setSelectedItems(filteredItems);
     } else {
+      // Adds in the array.
       setSelectedItems([...selectedItems, id]);
     }
   }
